@@ -7,6 +7,11 @@ try:
 except getopt.GetoptError:
 	print "usage: %s -i <number of CT:s>" % sys.argv[0]
 	sys.exit(2)
+
+if len(sys.argv) < 2:
+	print "usage: %s -i <number of CT:s>" % sys.argv[0]
+	sys.exit()
+
 for opt, arg in opts:
 	# print help
 	if opt == "-h":
@@ -22,7 +27,7 @@ ser.flushInput()				# remove garbage
 try:
 	while 1:
 		response = ser.readline()	# read serial input
-		z = response.split(",")		# sepparate values
+		z = response.split(",")		# separate values
 		for x in range(0, int(numct)):
 			print "CT %s: %s Watts" % (x+1, z[x])
 		print ""

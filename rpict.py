@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import serial, sys, getopt
+import serial, sys, getopt, os.path
 
 try:
 	opts, args = getopt.getopt(sys.argv[1:], "hi:")	# read arguments to variables
@@ -21,7 +21,15 @@ for opt, arg in opts:
 	elif opt in ("-i"):
 		numct = arg
 
-ser = serial.Serial('/dev/ttyAMA0', 38400)	# device, baud-rate
+if os.path.exists('/dev/ttyAMA0'):
+	serial_port = '/dev/ttyAMA0'
+elif os.path.exists('dev/ttyS0'):
+	serial_port = '/dev/ttyS0'
+else:
+	print "Could not detect any supported serial port on device"
+	sys.exit()
+
+ser = serial.Serial(serial_port, 38400)		# port, baud rate
 ser.flushInput()				# remove garbage
 
 try:

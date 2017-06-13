@@ -75,7 +75,7 @@ print
 x
 ```
 
-Explanation of the fields;
+Explanation of the fields;</br>
 x: enters interactive mode </br>
 print: prints current configuration</br>
 format: modifies the output format (0 = CSV (comma separated values))</br>

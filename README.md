@@ -76,12 +76,12 @@ x
 ```
 
 Explanation of the fields;
-x: enters interactive mode
-print: prints current configuration
-format: modifies the output format (0 = CSV (comma separated values))
-vest: setup voltage for estimated power
-addnode: addnode <current_pin> <slave_pin> <voltage_pin> <slave_pin>, in this case the first eight are the 3,5mm connections on the master board and the last eight are the slave's
-addchannel: addchannel <combid> <type>, sets the output channel on the different nodes, in this case all should output the estimated power
+x: enters interactive mode </br>
+print: prints current configuration</br>
+format: modifies the output format (0 = CSV (comma separated values))</br>
+vest: setup voltage for estimated power</br>
+addnode: addnode <current_pin> <slave_pin> <voltage_pin> <slave_pin>, in this case the first eight are the 3,5mm connections on the master board and the last eight are the slave's</br>
+addchannel: addchannel <combid> <type>, sets the output channel on the different nodes, in this case all should output the estimated power</br>
 
 Adding additional shields (up to a total of 5 (1 master, 4 slaves)) requires adding another set of eight nodes using the same values as the first slave. The id:s used in the channel will only increase so the third shield for example will have id:s ranging from 16-23.
 

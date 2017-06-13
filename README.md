@@ -1,7 +1,7 @@
 # rpict
 Code for reading values from up to 40 CT sensors connected to a raspberry pi. It requires a rpi 3 with RPICT8 shields mounted on it.
 
-In order to stack multiple shield on top of eachother, configuration of the serial communication must be done. For one shield this configuration file looks like the following:
+In order to stack multiple shield on top of eacho ther, configuration of the serial communication must be done. For one shield this configuration file looks like the following:
 
 ```
 x

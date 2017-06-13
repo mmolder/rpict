@@ -3,6 +3,7 @@ Code for reading values from up to 40 CT sensors connected to a raspberry pi. It
 
 In order to stack multiple shield on top of eachother, configuration of the serial communication must be done. For one shield this configuration file looks like the following:
 
+```
 x
 print
 zero
@@ -27,9 +28,11 @@ addchannel 6 5
 addchannel 7 5
 print 
 x
+```
 
 Stacking an additional shield requires the following modifications to be made:
 
+```
 x
 print
 zero
@@ -70,6 +73,7 @@ addchannel 14 5
 addchannel 15 5
 print
 x
+```
 
 Explanation of the fields;
 x: enters interactive mode
@@ -82,5 +86,7 @@ addchannel: addchannel <combid> <type>, sets the output channel on the different
 Adding additional shields (up to a total of 5 (1 master, 4 slaves)) requires adding another set of eight nodes using the same values as the first slave. The id:s used in the channel will only increase so the third shield for example will have id:s ranging from 16-23.
 
 When the new configuration is done, this is executed by running
+```
 while read line; do echo $line > /dev/ttyS0; sleep 0.1; done < 1xrpict8.conf
+```
 in a terminal window.
